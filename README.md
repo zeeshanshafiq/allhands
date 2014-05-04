@@ -38,9 +38,10 @@ A User is someone who may administer the system.  The details of the user are de
 
 #### Todo
 
-* Alter event model to have teaser text
 * Add markdown display support for description and summary
 * Reformat event edit screen
+* Make sure notices appear for edit and update screens
+* Fix navigation so that Home points to events/index
 * Add simple admin mode
     * Verify admin mode and non-admin mode works across various event numbers
 * Add an email-friendly mode for summaries after the meeting
