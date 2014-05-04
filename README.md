@@ -49,7 +49,8 @@ A User is someone who may administer the system.  The details of the user are de
 
 #### Implementation notes
 
-* The app makes use of [twitter-bootswatch-rails](https://github.com/scottvrosenthal/twitter-bootswatch-rails)
+* [twitter-bootswatch-rails](https://github.com/scottvrosenthal/twitter-bootswatch-rails)
+* [bootstrap-datepicker-rails](https://github.com/Nerian/bootstrap-datepicker-rails)
 
 #### Implementation diary
 
