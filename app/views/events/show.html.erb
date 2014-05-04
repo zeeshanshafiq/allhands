@@ -5,11 +5,11 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @event.description %></dd>
+  <dd><%= markdown @event.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:date) %>:</strong></dt>
   <dd><%= @event.date %></dd>
   <dt><strong><%= model_class.human_attribute_name(:summary) %>:</strong></dt>
-  <dd><%= @event.summary %></dd>
+  <dd><%= markdown @event.summary %></dd>
   <dt><strong><%= model_class.human_attribute_name(:headline) %>:</strong></dt>
   <dd><%= @event.headline %></dd>
 </dl>
