@@ -38,8 +38,6 @@ A User is someone who may administer the system.  The details of the user are de
 
 #### Todo
 
-* Add markdown display support for description and summary
-* Reformat event edit screen
 * Make sure notices appear for edit and update screens
 * Fix navigation so that Home points to events/index
 * Add simple admin mode
@@ -51,6 +49,9 @@ A User is someone who may administer the system.  The details of the user are de
 
 * [twitter-bootswatch-rails](https://github.com/scottvrosenthal/twitter-bootswatch-rails)
 * [bootstrap-datepicker-rails](https://github.com/Nerian/bootstrap-datepicker-rails)
+* [markitup](http://markitup.jaysalvat.com/)
+* [markitup rails](https://github.com/phlipper/markitup-rails)
+* [redcloth](https://github.com/jgarber/redcloth)
 
 #### Implementation diary
 
@@ -66,4 +67,10 @@ Next: Clean up layouts and created a more solid information architecture
 ###### Sat May  3 23:16:11 2014
 
 * Beautified home page slightly, added icons.
+
+###### Sun May  4 11:12:51 2014
+
+* Added Markdown rendering support via RedCloth
+* Added Mardown editor support via Markitup
+
 

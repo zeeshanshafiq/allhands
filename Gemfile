@@ -328,3 +328,4 @@ gem 'twitter-bootswatch-rails-helpers'
 gem 'therubyracer'
 gem 'bootstrap-datepicker-rails'
 gem 'redcarpet'
+gem "markitup-rails"

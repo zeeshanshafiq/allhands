@@ -4,6 +4,8 @@
  *= require simplex/loader
  *= require simplex/bootswatch
  *= require bootstrap-datepicker3
+ *= require markitup/skins/simple/style
+ *= require markitup/sets/markdown/style
 */
 
 .spacer {
