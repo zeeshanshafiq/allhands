@@ -40,3 +40,18 @@ A User is someone who may administer the system.  The details of the user are de
 
 * Generate an Event model and controller.  Verify CRUD operations and change route to point to the root of the events controller.
 * Generate a Question model and controller.  Verify CRUD operations and then link the detail pages of an Event to a question model.
+
+#### Implementation notes
+
+* The app makes use of [twitter-bootswatch-rails](https://github.com/scottvrosenthal/twitter-bootswatch-rails)
+
+#### Implementation diary
+
+###### Sat May  3 18:02:54 2014
+
+* Built an Ubuntu VM and deployed it outside of the firewall, externally accessible (via VPN)
+* Created a base project on my own personal GitHub
+* Integrated the latest Rails 4.1 and integrated Bootstrap 3
+* Added simple events controller
+
+Next: Clean up layouts and created a more solid information architecture
