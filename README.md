@@ -38,7 +38,12 @@ A User is someone who may administer the system.  The details of the user are de
 
 #### Todo
 
-* Generate an Event model and controller.  Verify CRUD operations and change route to point to the root of the events controller.
+* Alter event model to have teaser text
+* Add markdown display support for description and summary
+* Reformat event edit screen
+* Add simple admin mode
+    * Verify admin mode and non-admin mode works across various event numbers
+* Add an email-friendly mode for summaries after the meeting
 * Generate a Question model and controller.  Verify CRUD operations and then link the detail pages of an Event to a question model.
 
 #### Implementation notes
@@ -55,3 +60,8 @@ A User is someone who may administer the system.  The details of the user are de
 * Added simple events controller
 
 Next: Clean up layouts and created a more solid information architecture
+
+###### Sat May  3 23:16:11 2014
+
+* Beautified home page slightly, added icons.
+
