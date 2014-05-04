@@ -4,3 +4,11 @@
  *= require simplex/loader
  *= require simplex/bootswatch
 */
+
+.spacer {
+    margin-top: 100px; /* define margin as you see fit */
+}
+
+.spacer-2x {
+    margin-top: 200px; /* define margin as you see fit */
+}
