@@ -3,6 +3,7 @@
  *= require_self
  *= require simplex/loader
  *= require simplex/bootswatch
+ *= require bootstrap-datepicker3
 */
 
 .spacer {
