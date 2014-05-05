@@ -6,7 +6,6 @@ class EventsController < ApplicationController
   def index
     @events = Event.order(date: :desc).all
     @next_event = @events.first
-    binding.pry
     @events.to_a.shift
     @previous_events = @events
     @has_previous_eventsy = !@previous_events.empty?
