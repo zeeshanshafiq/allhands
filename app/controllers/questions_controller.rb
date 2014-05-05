@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_question, only: [:show, :edit, :update, :destroy, :increase_count]
 
   # GET /questions
   # GET /questions.json
@@ -25,6 +25,7 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(question_params)
+    @question.count = 1
 
     respond_to do |format|
       if @question.save
@@ -33,6 +34,15 @@ class QuestionsController < ApplicationController
       else
         format.html { redirect_to @question.event, notice: 'There was an error in creating the question.' }
         format.json { render json: @question.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def increase_count
+    @question.count += 1
+    if @question.save
+      respond_to do |format|
+        format.html {redirect_to :back, notice: 'Question was successfully updated.'}
       end
     end
   end
@@ -70,6 +80,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:content, :event_id)
+      params.require(:question).permit(:content, :event_id, :count)
     end
 end

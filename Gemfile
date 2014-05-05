@@ -318,6 +318,7 @@ gem 'bootstrap-sass'
 
 group :development do
   gem 'rails_layout', github: 'RailsApps/rails_layout'
+  gem 'pry-rails'
 end
 
 # twitter bootstrap css & javascript toolkit

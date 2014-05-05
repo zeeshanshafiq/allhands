@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :questions
+  resources :questions do
+    member do
+      post :increase_count
+    end
+  end
 
   resources :events
 

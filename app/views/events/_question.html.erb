@@ -1,11 +1,10 @@
 <tr>
   <td>
-    <%= question.content %> <span class="badge">4</span>
+    <%= question.content %> <span class="badge"><%= question.count %></span>
     <div class="question_actions pull-right">
             <%= link_to raw("<span class=\"glyphicon glyphicon-thumbs-up\"></span>"),
-                      question_path(question),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      increase_count_question_path(question),
+                      :method => 'post',
                       :class => 'btn btn-mini btn-primary' %>
 
       <%= link_to raw("<span class=\"glyphicon glyphicon-trash\"></span>"),
