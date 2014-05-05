@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     @next_event = @events.first
     @events.to_a.shift
     @previous_events = @events
-    @has_previous_eventsy = !@previous_events.empty?
+    @has_previous_events = !@previous_events.empty?
   end
 
   # GET /events/1
