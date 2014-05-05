@@ -24,4 +24,28 @@
 <div>
   <h4>Questions</h4>
 </div>
+<% if @event.questions.empty? %>
+<div class="alert alert-info"><b>No questions yet.</b>  Be the first to post a question.</div>
+<% end %>
+<table class="table table-striped">
+  <tbody>
+    <% @event.questions.each do |question| %>
+      <tr>
+	<td><%= question.content %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= form_for(@new_question) do |f| %>
+<%= f.hidden_field :event_id, :value => @event.id %>
+<div class="input-group">
+  <%= f.text_field :content, class: 'form-control' %>
+  <span class="input-group-btn">
+    <%= content_tag :button, :type => :submit, :class => "btn btn-default" do %>
+    Ask
+    <% end %>
+  </span>
+</div><!-- /input-group -->
+<% end %>
+
 
