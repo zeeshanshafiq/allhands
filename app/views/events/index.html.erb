@@ -2,9 +2,15 @@
 <div class="jumbotron spacer">
   <h1>INV Engineering All Hands Portal</h1>
   <p>
-    Our next event is on XXX.  YYY talks about ZZZ.  YYY and VVV..  
+    Our next event is on <%= @next_event.date %>.  <%= @next_event.headline %> 
+    <%= link_to raw("<span class=\"glyphicon glyphicon-pencil\"></span>"),
+                      edit_event_path(@next_event), :class => 'btn btn-default' %> 
+
   </p>
-  <p><a class="btn btn-primary btn-lg">Ask Q&A questions now &raquo;</a></p>
+  <p>
+    <%= link_to raw("Ask Q&A questions now &raquo;"), event_path(@next_event), class: 'btn btn-primary btn-lg' %>
+  </p>
+
 </div>
 
 <%- model_class = Event -%>
@@ -20,15 +26,15 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:date) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:headline) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @events.each do |event| %>
+    <% @previous_events.each do |event| %>
       <tr>
 	<td><%= event.date %></td>
-        <td><%= link_to event.description, event_path(event) %></td>
+        <td><%= link_to event.headline, event_path(event) %></td>
         <td class="">
           <%= link_to raw("<span class=\"glyphicon glyphicon-pencil\"></span>"),
                       edit_event_path(event), :class => 'btn btn-default' %> 
