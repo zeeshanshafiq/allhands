@@ -28,11 +28,9 @@
 <div class="alert alert-info"><b>No questions yet.</b>  Be the first to post a question.</div>
 <% end %>
 <table class="table table-striped">
-  <tbody>
+  <tbody id="event_questions">
     <% @event.questions.each do |question| %>
-      <tr>
-	<td><%= question.content %></td>
-      </tr>
+    <%= render 'question', :question => question  %>
     <% end %>
   </tbody>
 </table>
