@@ -4,9 +4,13 @@
 
 <div class="jumbotron spacer">
   <h1>INV Engineering All Hands Portal</h1>
+  <% if @next_event %>
   <p>
     Our next event is on <%= @next_event.date %>.  <%= @next_event.headline %> 
-  </p>
+  </<p>
+  <% else %>
+    <div class="alert alert-info"><b>Bootstrap condition.</b> Need to add an event.</div>
+  <% end %>
   <p>
     <%= link_to raw("Ask Q&A questions now &raquo;"), event_path(@next_event), class: 'btn btn-primary btn-lg' %>
     <% if admin? %>
