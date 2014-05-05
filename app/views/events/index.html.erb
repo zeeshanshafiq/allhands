@@ -20,6 +20,9 @@
   </<p>
   <% else %>
     <div class="alert alert-info"><b>Bootstrap condition.</b> Need to add an event.</div>
+    <%= link_to raw("<span class=\"glyphicon glyphicon-plus\"></span>"),
+            new_event_path,
+            :class => 'btn btn-primary' %>
   <% end %>
 
 </div>
