@@ -73,4 +73,11 @@ Next: Clean up layouts and created a more solid information architecture
 * Added Markdown rendering support via RedCloth
 * Added Mardown editor support via Markitup
 
+###### Mon May  5 08:01:35 2014
+
+* Several sessions over Sunday later, most of the basic functionality is implemented.  However, the implementation lacks polish.
+    * Need to implement toilet flush messages
+	* Need to implement admin mode
+	* Need to implement AJAX mode to handle deletes more elegantly (alternatively decide that questions can only be deleted by the admin).
+
 
