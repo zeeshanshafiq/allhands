@@ -3,6 +3,13 @@ module ApplicationHelper
     params[:admin] == "1"
   end
 
+  def asked_questions
+    if session[:questions].nil?
+      session[:questions] = []
+    end
+    session[:questions]
+  end
+
   def markdown(text)
     render_options = {
       # will remove from the output HTML tags inputted by user 

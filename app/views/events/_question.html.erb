@@ -6,7 +6,8 @@
                       increase_count_question_path(question),
                       :method => 'post',
                       :class => 'btn btn-mini btn-primary' %>
-	    <% if admin? %>
+	    <% if asked_questions.include?(question.id) || admin? %>
+
 	    <%= link_to raw("<span class=\"glyphicon glyphicon-trash\"></span>"),
                       question_path(question),
                       :method => :delete,

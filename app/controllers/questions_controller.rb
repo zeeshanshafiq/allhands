@@ -36,6 +36,8 @@ class QuestionsController < ApplicationController
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
     end
+    view_context.asked_questions << @question.id
+    
   end
 
   def increase_count
