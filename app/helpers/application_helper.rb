@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def admin?
+    params[:admin] == "1"
+  end
+
   def markdown(text)
     render_options = {
       # will remove from the output HTML tags inputted by user 
