@@ -39,9 +39,6 @@ A User is someone who may administer the system.  The details of the user are de
 #### Todo
 
 * Make sure notices appear for edit and update screens
-* Fix navigation so that Home points to events/index
-* Add simple admin mode
-    * Verify admin mode and non-admin mode works across various event numbers
 * Add an email-friendly mode for summaries after the meeting
 * Generate a Question model and controller.  Verify CRUD operations and then link the detail pages of an Event to a question model.
 
@@ -79,5 +76,9 @@ Next: Clean up layouts and created a more solid information architecture
     * Need to implement toilet flush messages
 	* Need to implement admin mode
 	* Need to implement AJAX mode to handle deletes more elegantly (alternatively decide that questions can only be deleted by the admin).
+
+###### Mon May  5 08:19:59 2014
+
+* Added simple admin mode
 
 
