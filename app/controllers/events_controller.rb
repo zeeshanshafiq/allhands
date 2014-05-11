@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :positive_feedback, :negative_feedback]
 
   # GET /events
   # GET /events.json
@@ -66,7 +66,26 @@ class EventsController < ApplicationController
     end
   end
 
+  def positive_feedback
+    @event.positive_feedback += 1
+    increment_feedback_and_save
+  end
+  
+  def negative_feedback
+    increment_feedback_and_save
+  end
+
   private
+  
+    def increment_feedback_and_save
+      @event.feedback_total += 1
+      if @event.save
+        respond_to do |format|
+          format.html {redirect_to :back, notice: 'Your positive vote was recorded.'}
+        end
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])

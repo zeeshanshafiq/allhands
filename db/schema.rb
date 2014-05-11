@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140511213854) do
+ActiveRecord::Schema.define(version: 20140511221924) do
 
   create_table "events", force: true do |t|
     t.text     "description"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20140511213854) do
     t.datetime "updated_at"
     t.string   "headline"
     t.boolean  "locked"
+    t.integer  "feedback_total",    default: 0
+    t.integer  "positive_feedback", default: 0
   end
 
   create_table "questions", force: true do |t|

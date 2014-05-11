@@ -12,6 +12,27 @@
     <% end %>
   </h1>
 </div>
+<div class="panel panel-danger">
+<div class="panel-heading">Please give feedback for this event</div>
+  <div class="panel-body">
+    <%= link_to raw("<span class=\"glyphicon glyphicon-thumbs-up\"></span>"),
+                      positive_feedback_event_path(@event),
+                      :method => 'post',
+                      :class => 'btn btn-mini btn-primary' %>
+    
+    <%= link_to raw("<span class=\"glyphicon glyphicon-thumbs-down\"></span>"),
+                      negative_feedback_event_path(@event),
+                      :method => 'post',
+                      :class => 'btn btn-mini btn-primary' %>
+
+    <% if @event.feedback_total > 0 %>
+    <h6>
+    <%= @event.positive_feedback %> votes were positive out of <%= @event.feedback_total %>. 
+    This translates to an employee NPS (Net Provider Score) of <%= number_to_percentage(@event.positive_feedback.to_f / @event.feedback_total.to_f * 100) %>
+    </h6>
+    <% end %>
+  </div>
+</div>
 <div>
   <h4>Description</h4>
    <%= markdown @event.description %>
@@ -31,10 +52,11 @@
 <table class="table table-striped">
   <tbody id="event_questions">
     <% @event.questions.each do |question| %>
-    <%= render 'question', :question => question  %>
+    <%= render 'question', :question => question, :event => @event  %>
     <% end %>
   </tbody>
 </table>
+<% unless @event.locked? %>
 <%= form_for(@new_question) do |f| %>
 <%= f.hidden_field :event_id, :value => @event.id %>
 <div class="input-group">
@@ -43,6 +65,7 @@
     <%= content_tag :button, :type => :submit, :class => "btn btn-default" do %>
     Ask
     <% end %>
+ <% end %>
   </span>
 </div><!-- /input-group -->
 <% end %>

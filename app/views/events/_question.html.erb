@@ -2,6 +2,7 @@
   <td>
     <span class="badge"><%= question.count %></span> <%= question.content %> 
     <div class="question_actions pull-right">
+         <% unless event.locked %>
             <%= link_to raw("<span class=\"glyphicon glyphicon-thumbs-up\"></span>"),
                       increase_count_question_path(question),
                       :method => 'post',
@@ -14,6 +15,7 @@
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
 	    <% end %>
+	 <% end %>
     </div>
   </td>
 </tr>
