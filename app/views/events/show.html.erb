@@ -12,6 +12,7 @@
     <% end %>
   </h1>
 </div>
+<% if @event.locked? %>
 <div class="panel panel-danger">
 <div class="panel-heading">Please give feedback for this event</div>
   <div class="panel-body">
@@ -33,6 +34,7 @@
     <% end %>
   </div>
 </div>
+<% end %>
 <div>
   <h4>Description</h4>
    <%= markdown @event.description %>
