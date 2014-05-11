@@ -38,10 +38,12 @@
 <div>
   <h4>Description</h4>
    <%= markdown @event.description %>
+   <hr>
 </div>
 <% unless @event.summary.empty? %>
 <div>
   <h4>Summary</h4>
+  <hr>
   <%= markdown @event.summary %>
 </div>
 <% end %>
