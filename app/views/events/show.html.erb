@@ -37,8 +37,8 @@
 <% end %>
 <div>
   <h4>Description</h4>
+  <hr>
    <%= markdown @event.description %>
-   <hr>
 </div>
 <% unless @event.summary.empty? %>
 <div>
@@ -49,6 +49,7 @@
 <% end %>
 <div>
   <h4>Questions</h4>
+  <hr>
 </div>
 <% if @event.questions.empty? %>
 <div class="alert alert-info"><b>No questions yet.</b>  Be the first to post a question.</div>
