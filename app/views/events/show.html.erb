@@ -11,30 +11,36 @@
                       :class => 'btn btn-mini btn-danger' %>
     <% end %>
   </h1>
-</div>
-<% if @event.locked? %>
-<div class="panel panel-danger">
-<div class="panel-heading">Please give feedback for this event</div>
-  <div class="panel-body">
-    <%= link_to raw("<span class=\"glyphicon glyphicon-thumbs-up\"></span>"),
-                      positive_feedback_event_path(@event),
-                      :method => 'post',
-                      :class => 'btn btn-mini btn-primary' %>
-    
-    <%= link_to raw("<span class=\"glyphicon glyphicon-thumbs-down\"></span>"),
-                      negative_feedback_event_path(@event),
-                      :method => 'post',
-                      :class => 'btn btn-mini btn-primary' %>
 
-    <% if @event.feedback_total > 0 %>
-    <h6>
-    <%= @event.positive_feedback %> votes were positive out of <%= @event.feedback_total %>. 
-    This translates to an employee NPS (Net Provider Score) of <%= number_to_percentage(@event.positive_feedback.to_f / @event.feedback_total.to_f * 100) %>
-    </h6>
-    <% end %>
-  </div>
+  <% if @event.locked? %>
+      <div class="feedback-container">
+
+        <% if @event.feedback_total > 0 %>
+            <div class="feedback-description">
+              This translates to an employee NPS
+              <br>
+              (Net Provider Score) of <%= feedback_percentage(@event) %>
+            </div>
+        <% end %>
+
+        <div class="feedback">
+          <span class="feedback-count"><%= positive_feedbacks(@event) %></span>
+          <%= link_to positive_feedback_event_path(@event),
+                      :method => 'post', :class => 'btn btn-mini btn-success' do %>
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+          <% end %>
+        </div>
+
+        <div class="feedback">
+          <span class="feedback-count"><%= negative_feedbacks(@event) %></span>
+          <%= link_to negative_feedback_event_path(@event),
+                      :method => 'post', :class => 'btn btn-mini btn-danger' do %>
+              <span class="glyphicon glyphicon-thumbs-down"></span>
+          <% end %>
+        </div>
+      </div>
+  <% end %>
 </div>
-<% end %>
 <div>
   <h4>Description</h4>
   <hr>
@@ -52,7 +58,7 @@
   <hr>
 </div>
 <% if @event.questions.empty? %>
-<div class="alert alert-info"><b>No questions yet.</b>  Be the first to post a question.</div>
+<div class="alert"><b>No questions yet.</b>  Be the first to post a question.</div>
 <% end %>
 <table class="table table-striped">
   <tbody id="event_questions">
