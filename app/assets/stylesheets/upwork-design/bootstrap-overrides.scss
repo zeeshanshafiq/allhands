@@ -1,0 +1,98 @@
+@import 'variables';
+
+.upwork-design {
+  background-color: $body-background-color;
+
+  * {
+    font-family: GothamBook;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  a {
+    color: $main-color;
+
+    &:hover {
+      color: $main-hover-color;
+    }
+  }
+
+  .btn {
+    border-radius: 0;
+
+    &.btn-success {
+      background-color: $main-color;
+      color: $main-background-color;
+
+      &:hover {
+        background-color: $main-hover-color;
+      }
+    }
+  }
+
+  .navbar-fixed-top {
+    background-color: $main-background-color;
+    padding: 10px 0;
+
+    .navbar-brand {
+      background: $main-background-color $logo-img no-repeat 100%;
+      background-size: 100%;
+      width: 100px;
+    }
+
+    .navbar-collapse ul.navbar-nav > li > a {
+      font-family: GothamMedium;
+      font-size: 1.3em;
+      color: $secondary-text-color;
+
+      &:hover {
+        color: $main-hover-color;
+      }
+    }
+  }
+
+  .container .jumbotron {
+    background-color: $main-background-color;
+    border-radius: 0;
+    border: 3px solid $border-color;
+    padding-top: 25px;
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+
+    .lead {
+      margin-bottom: 30px;
+    }
+  }
+
+  .alert {
+    background-color: $main-background-color;
+    border: 2px solid $alert-border-color;
+    color: $secondary-text-color;
+    position: relative;
+    padding-left: 50px;
+
+    &::before {
+      content: '!';
+      position: absolute;
+      left: 23px;
+      top: 12px;
+      font-size: 1.5em;
+      color: $alert-border-color;
+    }
+  }
+
+  .table-container {
+    background-color: $main-background-color;
+    padding: 20px 10px;
+    border: 3px solid $border-color;
+
+    .table {
+      margin-bottom: 0;
+    }
+  }
+}

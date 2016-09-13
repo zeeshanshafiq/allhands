@@ -1,53 +1,54 @@
-<!-- Main jumbotron for a primary marketing message or call to action -->
-
-
-
 <div class="jumbotron spacer">
   <h1><%= t :title %></h1>
-  <% unless @next_event.nil? %>
-  <p>
-    Our next event is on <%= @next_event.date %>.  <%= @next_event.headline %> 
+  <% if @next_event.present? %>
+    <p class="lead">
+      Our next event is on <%= @next_event.date %>.  <%= @next_event.headline %>
+    </p>
     <p>
-      <%= link_to raw("Ask Q&A questions now &raquo;"), event_path(@next_event), class: 'btn btn-primary btn-lg' %>
+      <%= link_to event_path(@next_event), class: 'btn btn-success btn-lg' do %>
+        Ask Q&A questions now &raquo;
+      <% end %>
+
       <% if admin? %>
-      <%= link_to raw("<span class=\"glyphicon glyphicon-pencil\"></span>"),
-                      edit_event_path(@next_event), :class => 'btn btn-default' %> 
-      <%= link_to raw("<span class=\"glyphicon glyphicon-plus\"></span>"),
-            new_event_path,
-            :class => 'btn btn-primary' %>
+        <%= link_to edit_event_path(@next_event), class: 'btn btn-default btn-lg' do %>
+          <span class="glyphicon glyphicon-pencil"></span>
+        <% end %>
+        <%= link_to new_event_path, class: 'btn btn-success btn-lg' do %>
+          <span class="glyphicon glyphicon-plus"></span>
+        <% end %>
       <% end %>
     </p>
-  </p>
   <% else %>
-    <div class="alert alert-info"><b>Bootstrap condition.</b> Need to add an event.</div>
-    <%= link_to raw("<span class=\"glyphicon glyphicon-plus\"></span>"),
-            new_event_path,
-            :class => 'btn btn-primary' %>
-  <% end %>
-
-</div>
-<% unless @previous_events.empty? %>
-<%- model_class = Event -%>
-<div id="archive" class="spacer"></div>
-<div class="page-header">
-  <h1>Previous <%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-</div>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:date) %></th>
-      <th><%= model_class.human_attribute_name(:headline) %></th>
-    </tr>
-  </th>
-  </thead>
-  <tbody>
-    <% @previous_events.each do |event| %>
-    <tr>
-      <td><%= event.date %></td>
-      <td><%= link_to event.headline, event_path(event) %></td>
-    </tr>
+    <div class="alert"><b>Bootstrap condition.</b> Need to add an event.</div>
+    <%= link_to new_event_path, class: 'btn btn-success btn-lg' do %>
+      <span class="glyphicon glyphicon-plus"></span>
     <% end %>
-  </tbody>
-</table>
+  <% end %>
+</div>
+
+<% if @previous_events.any? %>
+  <% model_class = Event -%>
+  <div id="archive" class="spacer"></div>
+  <div class="page-header">
+    <h1>Previous <%=t '.title', default: model_class.model_name.human.pluralize %></h1>
+  </div>
+  <div class="table-container">
+    <table class="table">
+      <thead>
+      <tr>
+        <th><%= model_class.human_attribute_name(:date) %></th>
+        <th><%= model_class.human_attribute_name(:headline) %></th>
+      </tr>
+      </th>
+      </thead>
+      <tbody>
+      <% @previous_events.each do |event| %>
+          <tr>
+            <td><%= event.date %></td>
+            <td><%= link_to event.headline, event_path(event) %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
 <% end %>

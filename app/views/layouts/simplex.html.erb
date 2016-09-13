@@ -18,10 +18,10 @@
     <%= yield(:page_stylesheet) if content_for?(:page_stylesheet) %>
 
   </head>
-  <body class="upwork">
+  <body class="upwork-design">
 
     <!-- Fixed navbar -->
-    <div class="upwork__navbar navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -29,11 +29,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-	      <%= link_to '', events_url, class: 'upwork__logo navbar-brand' %>
+	      <%= link_to '', events_url, class: 'navbar-brand' %>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to 'Home', events_url, class: 'upwork__navbar__menu-item' %></li>
+            <li><%= link_to 'Home', events_url %></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -47,7 +47,7 @@
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <%= javascript_include_tag "simplex" %>
+    <%= javascript_include_tag 'simplex' %>
     <%= yield(:page_javascript) if content_for?(:page_javascript) %>
   </body>
 </html>

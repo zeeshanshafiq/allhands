@@ -2,8 +2,7 @@
  * Bootswatch
  *= require_self
 
- *= require upwork-design
- *= require fonts
+ *= require upwork-design/manifest
 
  *= require simplex/loader
  *= require simplex/bootswatch
