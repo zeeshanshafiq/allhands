@@ -42,6 +42,7 @@ gem 'bootstrap-sass'
 group :development do
   gem 'rails_layout', github: 'RailsApps/rails_layout'
   gem 'pry-rails'
+  gem 'quiet_assets'
 end
 
 # twitter bootstrap css & javascript toolkit
@@ -52,4 +53,4 @@ gem 'twitter-bootswatch-rails-helpers'
 gem 'therubyracer'
 gem 'bootstrap-datepicker-rails'
 gem 'redcarpet'
-gem "markitup-rails"
+gem 'markitup-rails'
