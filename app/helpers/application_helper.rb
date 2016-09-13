@@ -10,6 +10,19 @@ module ApplicationHelper
     session[:questions]
   end
 
+  def feedback_percentage(event)
+    percentage = event.positive_feedback.to_f / event.feedback_total.to_f * 100
+    "#{percentage.round(2)}%"
+  end
+
+  def positive_feedbacks(event)
+    event.positive_feedback
+  end
+
+  def negative_feedbacks(event)
+    event.feedback_total - event.positive_feedback
+  end
+
   def markdown(text)
     render_options = {
       # will remove from the output HTML tags inputted by user 

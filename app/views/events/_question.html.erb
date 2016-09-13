@@ -1,21 +1,28 @@
 <tr>
   <td>
-    <span class="badge"><%= question.count %></span> <%= question.content %> 
-    <div class="question_actions pull-right">
-         <% unless event.locked %>
-            <%= link_to raw("<span class=\"glyphicon glyphicon-thumbs-up\"></span>"),
-                      increase_count_question_path(question),
-                      :method => 'post',
-                      :class => 'btn btn-mini btn-primary' %>
-	    <% if asked_questions.include?(question.id) || admin? %>
+    <div class="question-content">
+      <%= question.content %>
+    </div>
 
-	    <%= link_to raw("<span class=\"glyphicon glyphicon-trash\"></span>"),
-                      question_path(question),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+    <div class="question-actions pull-right">
+      <% unless event.locked %>
+        <div class="questions-count">
+          <%= question.count %>
+        </div>
+        <%= link_to increase_count_question_path(question),
+                      method: 'post', class: 'btn btn-mini btn-success' do %>
+            <span class="glyphicon glyphicon-thumbs-up"></span>
+        <% end %>
+
+        <% if asked_questions.include?(question.id) || admin? %>
+
+          <%= link_to question_path(question),
+                      method: :delete, data: { confirm: t('.confirm', default: t('helpers.links.confirm', default: 'Are you sure?')) },
+                      class: 'btn btn-mini btn-danger' do %>
+                  <span class="glyphicon glyphicon-trash"></span>
+          <% end %>
+        <% end %>
 	    <% end %>
-	 <% end %>
     </div>
   </td>
 </tr>

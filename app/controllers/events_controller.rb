@@ -4,11 +4,9 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.order(date: :desc).all
-    @next_event = @events.first
-    @events.to_a.shift
-    @previous_events = @events
-    @has_previous_events = !@previous_events.empty?
+    events = Event.order(date: :desc).all
+    @next_event = events.to_a.shift
+    @previous_events = events
   end
 
   # GET /events/1

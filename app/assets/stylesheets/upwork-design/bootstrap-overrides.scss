@@ -1,0 +1,269 @@
+@import 'variables';
+
+.upwork-design {
+  background-color: $body-background-color;
+
+  /* Some default elements */
+
+  * {
+    font-family: GothamBook;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h4 {
+    font-family: GothamMedium;
+  }
+
+  a {
+    color: $main-color;
+
+    &:hover {
+      color: $main-hover-color;
+    }
+  }
+
+  .btn {
+    border-radius: 0;
+
+    &.btn-success {
+      background-color: $main-color;
+      color: $main-background-color;
+
+      &:hover {
+        background-color: $main-hover-color;
+      }
+    }
+
+    &.btn-danger {
+      color: $main-background-color;
+    }
+  }
+
+  .alert {
+    background-color: $main-background-color;
+    border: 2px solid $alert-border-color;
+    color: $secondary-text-color;
+    position: relative;
+    padding-left: 50px;
+
+    &::before {
+      content: '!';
+      position: absolute;
+      left: 23px;
+      top: 12px;
+      font-size: 1.5em;
+      color: $alert-border-color;
+    }
+  }
+
+  /* Home page (Events) */
+
+  .navbar-fixed-top {
+    background-color: $main-background-color;
+    padding: 10px 0;
+
+    .navbar-brand {
+      background: $main-background-color $logo-img no-repeat 100%;
+      background-size: 100%;
+      width: 100px;
+    }
+
+    .navbar-collapse ul.navbar-nav > li > a {
+      font-family: GothamMedium;
+      font-size: 1.3em;
+      color: $secondary-text-color;
+
+      &:hover {
+        color: $main-hover-color;
+      }
+    }
+  }
+
+  .container .jumbotron {
+    background-color: $main-background-color;
+    border-radius: 0;
+    border: 3px solid $border-color;
+    padding-top: 25px;
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+
+    .lead {
+      margin-bottom: 30px;
+    }
+  }
+
+  .events-list {
+    background-color: $main-background-color;
+    padding: 20px 10px;
+    border: 3px solid $border-color;
+
+    .table, table {
+      margin-bottom: 0;
+
+      tr td {
+        border-top: none;
+      }
+    }
+  }
+
+  /* Event page (show) */
+
+  .page-header {
+    position: relative;
+
+    .feedback-container {
+      font-size: 2em;
+      position: absolute;
+      top: -20px;
+      right: 0;
+      text-align: right;
+      background-color: $main-background-color;
+      border: 2px solid $border-color;
+      color: $secondary-text-color;
+      padding: 10px;
+
+      .feedback-description {
+        display: inline-block;
+        font-size: .5em;
+        padding-top: 3px;
+        margin-right: 20px;
+        width: 300px;
+        vertical-align: top;
+      }
+
+      .feedback {
+        display: inline-block;
+        margin-left: 10px;
+        vertical-align: top;
+
+        .feedback-count {
+          font-size: .7em;
+          color: $secondary-text-color;
+        }
+
+        .btn {
+          font-size: .9em;
+          padding: 6px 12px 0px;
+        }
+      }
+    }
+  }
+
+  .questions-list {
+    .table, table {
+      tr td {
+        border-top: none;
+      }
+
+      tr:not(:last-child) td {
+        border-bottom: 1px solid $border-color;
+      }
+    }
+
+    .question-content {
+      display: inline-block;
+      width: 85%;
+    }
+
+    .question-actions {
+      display: inline-block;
+
+      .questions-count {
+        display: inline-block;
+        font-size: 1.2em;
+        vertical-align: top;
+        margin-right: 10px;
+        padding-top: 5px;
+      }
+
+      .btn {
+        font-size: 1.2em;
+        padding: 6px 12px 0px;
+        vertical-align: top;
+      }
+    }
+  }
+
+  /* Event page (edit) */
+
+  .form, form {
+    .form-group {
+      label {
+        font-family: GothamMedium;
+      }
+
+      .form-control {
+        border-radius: 0;
+        border: 2px solid $border-color;
+        box-shadow: none;
+        padding: 20px 15px;
+        font-size: 1.2em;
+
+        &:focus, &:hover {
+          border-color: $main-color;
+        }
+
+        &:active, &:focus, &:hover {
+          box-shadow: none;
+        }
+
+        &[type=checkbox] {
+          display: inline-block;
+          width: 50px;
+          height: 14px;
+          margin-left: 15px;
+        }
+      }
+
+      .datepicker-control {
+        width: 135px;
+        text-align: center;
+      }
+
+      .markItUp {
+        width: 100%;
+
+        .markItUpButton {
+          margin-right: 2px;
+          padding: 10px 5px;
+        }
+
+        .markItUpSeparator {
+          margin-top: 10px;
+        }
+
+        .markItUpContainer {
+          font: 1em GothamBook;
+        }
+
+        .markItUpEditor {
+          width: 100%;
+          font: 1.2em GothamBook;
+        }
+
+        .markItUpResizeHandle {
+          margin-top: 5px;
+        }
+      }
+    }
+
+    .input-group {
+      @extend .form-group;
+
+      .input-group-btn button {
+        padding: 10px;
+        border: 2px solid $border-color;
+
+        &:hover {
+          border-color: $main-color;
+        }
+      }
+    }
+  }
+}

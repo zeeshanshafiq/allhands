@@ -3,8 +3,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-datepicker
+
 //= require simplex/loader
 //= require simplex/bootswatch
-//= require bootstrap-datepicker
+
 //= require markitup
 //= require markitup/sets/xbbcode/set
+
+//= require events
