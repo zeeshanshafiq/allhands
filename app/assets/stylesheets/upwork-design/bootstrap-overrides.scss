@@ -95,4 +95,66 @@
       margin-bottom: 0;
     }
   }
+
+  .form {
+    .form-group {
+      label {
+        font-family: GothamMedium;
+      }
+
+      .form-control {
+        border-radius: 0;
+        border: 2px solid $border-color;
+        box-shadow: none;
+        padding: 20px 15px;
+        font-size: 1.2em;
+
+        &:focus, &:hover {
+          border-color: $main-color;
+        }
+
+        &:active, &:focus, &:hover {
+          box-shadow: none;
+        }
+
+        &[type=checkbox] {
+          display: inline-block;
+          width: 50px;
+          height: 14px;
+          margin-left: 15px;
+        }
+      }
+
+      .datepicker-control {
+        width: 135px;
+        text-align: center;
+      }
+
+      .markItUp {
+        width: 100%;
+
+        .markItUpButton {
+          margin-right: 2px;
+          padding: 10px 5px;
+        }
+
+        .markItUpSeparator {
+          margin-top: 10px;
+        }
+
+        .markItUpContainer {
+          font: 1em GothamBook;
+        }
+
+        .markItUpEditor {
+          width: 100%;
+          font: 1.2em GothamBook;
+        }
+
+        .markItUpResizeHandle {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
 }
