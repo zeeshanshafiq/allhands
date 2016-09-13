@@ -1,0 +1,25 @@
+@import 'variables';
+
+.upwork {
+  .upwork__logo {
+    background: #fff image-url('logo.png') no-repeat 100%;
+    background-size: 100%;
+    width: 100px;
+  }
+
+  .upwork__navbar {
+    background-color: #fff;
+    padding: 10px 0;
+
+    .upwork__navbar__menu-item {
+      font-family: GothamMedium;
+      font-size: 1.3em;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+  }
+}
+
+
