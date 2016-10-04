@@ -1,12 +1,14 @@
 # All Hands
 
-The purpose of this project is to manage engineering all hands meetings.  Broadly the use cases are:
+The purpose of this project is to manage all hands meetings.  Broadly the use cases are:
 
 * Display agends for each upcoming all hands
 * Archive existing all hands
 * Link to material presented during an all hands
 * Provide a forum to ask anonymous questions
 * Provide a forum to vote up anonymous questions
+
+I've used this solution both at my roles at Upwork and eBay.  Currently, the state of the repository has a skin that is designed to emulate the Upwork website.
 
 ## Models
 
