@@ -32,15 +32,9 @@ It comprises of:
 * Question
 * Priority
 
-##### User
+##### Users
 
-A User is someone who may administer the system.  The details of the user are defined by the authentication framework.
-
-#### Todo
-
-* Make sure notices appear for edit and update screens
-* Add an email-friendly mode for summaries after the meeting
-* Generate a Question model and controller.  Verify CRUD operations and then link the detail pages of an Event to a question model.
+Administration of the site is done by adding ```admin=1``` to the request URL for any object.  If a more serious security approach is needed, this can be easily implemented.  Otherwise, there are no users.
 
 #### Implementation notes
 
@@ -49,36 +43,4 @@ A User is someone who may administer the system.  The details of the user are de
 * [markitup](http://markitup.jaysalvat.com/)
 * [markitup rails](https://github.com/phlipper/markitup-rails)
 * [redcloth](https://github.com/jgarber/redcloth)
-
-#### Implementation diary
-
-###### Sat May  3 18:02:54 2014
-
-* Built an Ubuntu VM and deployed it outside of the firewall, externally accessible (via VPN)
-* Created a base project on my own personal GitHub
-* Integrated the latest Rails 4.1 and integrated Bootstrap 3
-* Added simple events controller
-
-Next: Clean up layouts and created a more solid information architecture
-
-###### Sat May  3 23:16:11 2014
-
-* Beautified home page slightly, added icons.
-
-###### Sun May  4 11:12:51 2014
-
-* Added Markdown rendering support via RedCloth
-* Added Mardown editor support via Markitup
-
-###### Mon May  5 08:01:35 2014
-
-* Several sessions over Sunday later, most of the basic functionality is implemented.  However, the implementation lacks polish.
-    * Need to implement toilet flush messages
-	* Need to implement admin mode
-	* Need to implement AJAX mode to handle deletes more elegantly (alternatively decide that questions can only be deleted by the admin).
-
-###### Mon May  5 08:19:59 2014
-
-* Added simple admin mode
-
 
