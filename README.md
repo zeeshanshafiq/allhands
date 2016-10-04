@@ -1,4 +1,4 @@
-### All Hands
+# All Hands
 
 The purpose of this project is to manage engineering all hands meetings.  Broadly the use cases are:
 
@@ -8,9 +8,9 @@ The purpose of this project is to manage engineering all hands meetings.  Broadl
 * Provide a forum to ask anonymous questions
 * Provide a forum to vote up anonymous questions
 
-#### Models
+## Models
 
-##### Event
+### Event
 
 An event is an instance of an all hands meeting.
 
@@ -23,7 +23,7 @@ It compromises of:
 
 An event also has Questions.
 
-##### Question
+### Question
 
 A Question belongs to an event and represents a query that an attendee may have for the presenter.
 
@@ -32,11 +32,11 @@ It comprises of:
 * Question
 * Priority
 
-##### Users
+## Users
 
 Administration of the site is done by adding ```admin=1``` to the request URL for any object.  If a more serious security approach is needed, this can be easily implemented.  Otherwise, there are no users.
 
-#### Implementation notes
+## Implementation notes
 
 * [twitter-bootswatch-rails](https://github.com/scottvrosenthal/twitter-bootswatch-rails)
 * [bootstrap-datepicker-rails](https://github.com/Nerian/bootstrap-datepicker-rails)
