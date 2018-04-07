@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>=4.2.0'
+gem 'rails', '>=4.2.5.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -40,7 +40,7 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 
 group :development do
-  gem 'rails_layout', github: 'RailsApps/rails_layout'
+  gem 'rails_layout', git: 'https://github.com/RailsApps/rails_layout.git'
   gem 'pry-rails'
   gem 'quiet_assets'
 end
