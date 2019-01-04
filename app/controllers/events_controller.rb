@@ -68,18 +68,18 @@ class EventsController < ApplicationController
     @event.positive_feedback += 1
     increment_feedback_and_save
   end
-  
+
   def negative_feedback
     increment_feedback_and_save
   end
 
   private
-  
+
     def increment_feedback_and_save
       @event.feedback_total += 1
       if @event.save
         respond_to do |format|
-          format.html {redirect_to :back, notice: 'Your positive vote was recorded.'}
+          format.html {redirect_back notice: 'Your vote was recorded.', fallback_location: root_path}
         end
       end
     end

@@ -41,14 +41,14 @@ class QuestionsController < ApplicationController
       end
     end
     view_context.asked_questions << @question.id
-    
+
   end
 
   def increase_count
     @question.count += 1
     if @question.save
       respond_to do |format|
-        format.html {redirect_to :back, notice: 'Question was successfully updated.'}
+        format.html {redirect_back notice: 'Question was successfully updated.', fallback_location: root_path}
       end
     end
   end
