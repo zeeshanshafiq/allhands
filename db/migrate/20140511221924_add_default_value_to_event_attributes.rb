@@ -1,4 +1,4 @@
-class AddDefaultValueToEventAttributes < ActiveRecord::Migration
+class AddDefaultValueToEventAttributes < ActiveRecord::Migration[4.2]
   def up
     change_column :events, :positive_feedback, :integer, :default => 0
     change_column :events, :feedback_total, :integer, :default => 0

@@ -1,22 +1,6 @@
 /* Simplex
  * Bootswatch
  *= require_self
-
- *= require upwork-design/manifest
-
  *= require simplex/loader
  *= require simplex/bootswatch
-
- *= require bootstrap-datepicker3
-
- *= require markitup/skins/simple/style
- *= require markitup/sets/markdown/style
 */
-
-.spacer {
-    margin-top: 100px; /* define margin as you see fit */
-}
-
-.spacer-2x {
-    margin-top: 200px; /* define margin as you see fit */
-}
