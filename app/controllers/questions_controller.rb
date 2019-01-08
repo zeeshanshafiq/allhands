@@ -73,7 +73,7 @@ class QuestionsController < ApplicationController
     event = @question.event
     @question.destroy
     respond_to do |format|
-      format.html { redirect_to :back, notice: 'Question was successfully destroyed.' }
+      format.html { redirect_back notice: 'Question was successfully destroyed.', fallback_location: root_path }
       format.json { head :no_content }
     end
   end
