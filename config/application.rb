@@ -24,5 +24,6 @@ module Allhands
     # config.i18n.default_locale = :de
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
     config.active_record.sqlite3.represent_boolean_as_integer = true
+    config.relative_url_root = Rails.application.secrets.relative_url_root || "/"
   end
 end
