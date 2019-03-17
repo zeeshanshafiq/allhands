@@ -38,6 +38,18 @@ It comprises of:
 
 Administration of the site is done by adding ```admin=1``` to the request URL for any object.  If a more serious security approach is needed, this can be easily implemented.  Otherwise, there are no users.
 
+## Relative URLs and proxy configuration
+
+In certain cases, there may be a desire to create separate installations on the same server.  For example, multiple groups may want to have their own instance.  The current implementation is not multi-tenant.  In the meanwhile, there is support for relative URLs which can be used in conjunction with proxies to create a similar effect as a true multi-tenant environment.  
+
+To define a relative URL simply add this key to ```config/secrets.yml```:
+
+```ruby
+relative_url_root: "/my_relative_url"
+```
+
+An example NGINX proxy configuration is located in [doc/sample_nginx_proxy_configuration](doc/sample_nginx_proxy_configuration).
+
 ## Implementation notes
 
 * [twitter-bootswatch-rails](https://github.com/scottvrosenthal/twitter-bootswatch-rails)
@@ -45,4 +57,3 @@ Administration of the site is done by adding ```admin=1``` to the request URL fo
 * [markitup](http://markitup.jaysalvat.com/)
 * [markitup rails](https://github.com/phlipper/markitup-rails)
 * [redcloth](https://github.com/jgarber/redcloth)
-
